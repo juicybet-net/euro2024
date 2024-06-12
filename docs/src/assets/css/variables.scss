@@ -1,0 +1,99 @@
+
+
+
+:root {
+
+
+    //fonts
+    --font-family-main: 'Be Vietnam Pro', 'sans-serif';
+   
+
+    --text-size-base: 16px;
+    --text-line-base: 120%;
+    --text-weight-base: 300;
+    --text-base: var(--text-weight-base) var(--text-size-base) / var(--text-line-base) var(--font-family-main);
+
+    --text-size-sm: 22px;
+    --text-line-sm: 91%;
+    --text-weight-sm: 700;
+    --text-sm: var(--text-weight-sm) var(--text-size-sm) / var(--text-line-sm) var(--font-family-main);
+
+    
+    --text-size-lg: 26px;
+    --text-line-lg: 91%;
+    --text-weight-lg: 400;
+    --text-lg: var(--text-weight-lg) var(--text-size-lg) / var(--text-line-lg) var(--font-family-main);
+
+
+    --text-size-xl: 32px;
+    --text-line-xl: 91%;
+    --text-weight-xl: 700;
+    --text-xl: var(--text-weight-xl) var(--text-size-xl) / var(--text-line-xl) var(--font-family-main);
+
+    --text-size-2xl: 46px;
+    --text-line-2xl: 91%;
+    --text-weight-2xl: 700;
+    --text-2xl: var(--text-weight-2xl) var(--text-size-2xl) / var(--text-line-2xl) var(--font-family-main);
+
+    --text-size-3xl: 69px;
+    --text-line-3xl: 91%;
+    --text-weight-3xl: 700;
+    --text-3xl: var(--text-weight-3xl) var(--text-size-3xl) / var(--text-line-3xl) var(--font-family-main);
+
+
+    --text-size-4xl: 88px;
+    --text-line-4xl: 91%;
+    --text-weight-4xl: 700;
+    --text-4xl: var(--text-weight-4xl) var(--text-size-4xl) / var(--text-line-4xl) var(--font-family-main);
+
+
+    --text-size-btn: 35px;
+    --text-line-btn: 91%;
+    --text-weight-btn: 900;
+    --text-btn: var(--text-weight-btn) var(--text-size-btn) / var(--text-line-btn) var(--font-family-main);
+
+
+
+    //colors
+    --color-white: #fff;
+    --color-black: #030514;
+    --color-blue: #060920;
+    --color-blue-5: #0D1552;
+    --color-blue2: rgba(25, 45, 118, 1);
+    --color-blue3: #0B1881;
+    --color-blue4: #23207C;
+    --color-orange: #EB8F3B;
+    --color-purple: #CABEFF;
+    --color-purple2: #AAA3D2;
+    --color-purple3-3: rgba(129, 35, 35, 0.30);
+    --color-gold: #FFCF55;
+
+
+
+
+    //gradients
+    --gradient-orange-bottom: linear-gradient(180deg, #FF986B 0%, #CA3D00 100%);
+    --gradient-orange-bottom2: linear-gradient(180deg, rgba(255, 179, 146, 1) 0%, rgba(255, 113, 52, 1) 100%);
+
+    --gradient-blue-bottom: linear-gradient(0deg, rgba(25, 45, 118, 0.25) 0%, rgba(19, 13, 47, 0.25) 92.65%);
+
+    --gradient-purple-bottom: linear-gradient(180deg, #192D76 17.74%, #5B06C8 96.56%);
+    --gradient-purple-top: linear-gradient(0deg, var(--color-blue2) 13%, rgba(20, 1, 109, 0.80) 50.92%, rgba(102, 8, 176, 0.80) 92.65%);
+
+    
+
+    
+}
+
+
+@media screen and (max-width: 1025px) {
+    :root {
+        --text-size-4xl: 38px;
+        --text-size-3xl: 38px;
+        --text-size-2xl: 38px;
+        --text-size-xl: 30px;
+        --text-size-lg: 20px;
+        --text-size-3lg: 19px;
+        --text-size-base: 14px;
+    }
+}
