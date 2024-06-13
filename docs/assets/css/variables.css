@@ -34,7 +34,7 @@
   --text-btn: var(--text-weight-btn) var(--text-size-btn) / var(--text-line-btn) var(--font-family-main);
   --color-white: #fff;
   --color-black: #030514;
-  --color-blue: #060920;
+  --color-blue: #06091F;
   --color-blue-5: #0D1552;
   --color-blue2: rgba(25, 45, 118, 1);
   --color-blue3: #0B1881;
@@ -53,12 +53,36 @@
 
 @media screen and (max-width: 1025px) {
   :root {
-    --text-size-4xl: 38px;
+    --text-size-4xl: 60px;
     --text-size-3xl: 38px;
-    --text-size-2xl: 38px;
-    --text-size-xl: 30px;
+    --text-size-2xl: 21px;
+    --text-size-xl: 16px;
     --text-size-lg: 20px;
     --text-size-3lg: 19px;
     --text-size-base: 14px;
+    --text-size-sm: 16px;
+    --text-size-btn: 25px;
+  }
+}
+@media screen and (max-width: 735px) {
+  :root {
+    --text-size-3xl: 38px;
+    --text-size-2xl: 14px;
+    --text-size-xl: 14px;
+    --text-size-lg: 20px;
+    --text-size-3lg: 19px;
+    --text-size-base: 14px;
+  }
+}
+@media screen and (max-width: 650px) {
+  :root {
+    --text-size-4xl: 35px;
+    --text-size-3xl: 25px;
+    --text-size-2xl: 12px;
+    --text-size-xl: 10px;
+    --text-size-lg: 20px;
+    --text-size-3lg: 19px;
+    --text-size-base: 14px;
+    --text-size-sm: 7px;
   }
 }/*# sourceMappingURL=variables.css.map */

@@ -19,6 +19,7 @@ const onToggleNavigationItem = (e) => {
 
 navigationItems.forEach(item => item.addEventListener('click', onToggleNavigationItem))
 
+const menuNavBorderRadius = window.innerWidth > 650 ? '33px' : '20px' 
 
 
 
@@ -31,18 +32,18 @@ function CheckMenuBgStyle() {
           
             switch(index) {
                 case 0: {
-                    menuBody.style['border-radius'] = '0 33px 33px 33px'
+                    menuBody.style['border-radius'] = `0 ${menuNavBorderRadius} ${menuNavBorderRadius} ${menuNavBorderRadius}`
                     menuNavItems[1].style['padding'] = '18px 20px'
                     break;
                 } 
                 case (menuNavItems.length-1): {
-                    menuBody.style['border-radius'] = '33px 0 33px 33px'
+                    menuBody.style['border-radius'] = `${menuNavBorderRadius} 0 ${menuNavBorderRadius} ${menuNavBorderRadius}`
                     menuNavItems[1].style['padding'] = '18px 20px'
                     break;
 
                 } 
                 default: {
-                    menuBody.style['border-radius'] = '33px'
+                    menuBody.style['border-radius'] = `${menuNavBorderRadius}`
                     menuNavItems[0].style['padding'] = '18px 20px 18px 0'
                     menuNavItems[2].style['padding'] = '18px 0 18px 20px'
                     break;
