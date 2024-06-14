@@ -303,13 +303,13 @@ body {
 
 .menu__content {
   border-radius: 33px;
+  padding-top: 129px;
 }
 .menu__nav {
   display: flex;
   align-items: stretch;
   justify-content: space-between;
   background: transparent;
-  padding-top: 129px;
 }
 .menu__nav_img {
   opacity: 0;
@@ -412,6 +412,7 @@ body {
 .menu__body {
   padding: 28px 54px 20px 60px;
   background: var(--gradient-purple-bottom);
+  position: relative;
 }
 .menu__cards {
   display: flex;
@@ -589,6 +590,14 @@ body {
   .container {
     margin: 0 16px;
   }
+  .menu__content {
+    padding-top: 35px;
+  }
+  .menu__nav {
+    width: 100svw;
+    transform: translateX(-16px);
+    padding: 0 16px;
+  }
   .menu__nav_title {
     margin-bottom: 18px;
   }
@@ -598,6 +607,25 @@ body {
   .menu__nav_item.active::before, .menu__nav_item.active::after {
     width: 20px;
     height: 20px;
+  }
+  .menu__nav_plane {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translateX(40px);
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-purple-bottom);
+    border-radius: 20px 20px 0 0;
+    z-index: 1;
+  }
+  .menu__body {
+    z-index: 100;
+  }
+  .menu__cards {
+    z-index: 100;
+    position: relative;
   }
   .menu__card {
     border-radius: 20px;
