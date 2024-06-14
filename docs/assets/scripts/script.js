@@ -35,6 +35,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const plane = document.querySelector('.menu__nav_plane')
         plane?.remove()
 
+        const scrollLeft = navigation.scrollLeft;
+        const navWidth = navigation.scrollWidth - navigation.clientWidth;
 
         navigationItems.forEach((item, index) => {
             if(item.classList.contains('active')){
@@ -43,11 +45,34 @@ document.addEventListener('DOMContentLoaded', () => {
                     case 0: {
                         menuBody.style['border-radius'] = `0 ${menuNavBorderRadius} ${menuNavBorderRadius} ${menuNavBorderRadius}`
                         navigationItems[1].style['padding'] = '18px 20px'
+
+
+                        if(scrollLeft / navWidth > 0.5) {
+                            bgPlane.style.borderRadius = `0`
+                        }else {
+                            bgPlane.style.borderRadius = `0 ${menuNavBorderRadius} 0 0 `
+                        }
+                        bgPlane.style.left = '0'
+                        bgPlane.style.transform = `translateX(calc(${-(scrollLeft / navWidth * 100)}%))`;
+                        menuBody.appendChild(bgPlane)
+                        navigation.addEventListener('scroll', () => updateBgPlanePosition(0));
                         break;
                     } 
                     case (navigationItems.length-1): {
                         menuBody.style['border-radius'] = `${menuNavBorderRadius} 0 ${menuNavBorderRadius} ${menuNavBorderRadius}`
                         navigationItems[1].style['padding'] = '18px 20px'
+
+
+                        bgPlane.style.left = '100%'
+                        if(scrollLeft / navWidth < 0.5) {
+                            bgPlane.style.borderRadius = `0`
+                        }else {
+                            bgPlane.style.borderRadius = `${menuNavBorderRadius} 0 0 0 `
+                        }
+                        bgPlane.style.transform = `translateX(calc(${-(scrollLeft / navWidth * 100)}%))`;
+
+                        menuBody.appendChild(bgPlane)
+                        navigation.addEventListener('scroll', () => updateBgPlanePosition(2));
                         break;
 
                     } 
@@ -55,7 +80,13 @@ document.addEventListener('DOMContentLoaded', () => {
                         menuBody.style['border-radius'] = `${menuNavBorderRadius}`
                         navigationItems[0].style['padding'] = '18px 20px 18px 0'
                         navigationItems[2].style['padding'] = '18px 0 18px 20px'
+
+                        bgPlane.style.left = 'auto'
+                        bgPlane.style.right = '0px'
+                        bgPlane.style.borderRadius = `${menuNavBorderRadius} ${menuNavBorderRadius} 0 0`
+                        bgPlane.style.transform = `translateX(calc(40px + ${-(scrollLeft / navWidth * 30)}%))`;
                         menuBody.appendChild(bgPlane)
+                        navigation.addEventListener('scroll', () => updateBgPlanePosition(1));
                         break;
                     }
                 }
@@ -64,20 +95,40 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    const updateBgPlanePosition = () => {
+    const updateBgPlanePosition = (index) => {
         if(bgPlane) {
             const scrollLeft = navigation.scrollLeft;
             const navWidth = navigation.scrollWidth - navigation.clientWidth;
-            const bodyWidth = menuBody.clientWidth;
             
-            // Calculate the position of the bgPlane based on scroll position
-            const bgPlaneLeft = (scrollLeft / navWidth) * (bodyWidth - bgPlane.clientWidth);
-            // console.log(bgPlaneLeft)
-            bgPlane.style.transform = `translateX(calc(40px + ${-(scrollLeft / navWidth * 30)}%))`;
+            switch(index) {
+                case 0: {
+                    if((scrollLeft / navWidth) > 0.5) {
+                        bgPlane.style.borderRadius = `0`
+                    }else {
+                        bgPlane.style.borderRadius = `0 ${menuNavBorderRadius} 0 0 `
+                    }
+                    bgPlane.style.transform = `translateX(calc(${-(scrollLeft / navWidth * 100)}%))`;
+                    break;
+                }
+                case 1: {
+                    bgPlane.style.borderRadius = `${menuNavBorderRadius} ${menuNavBorderRadius} 0 0 `
+                    bgPlane.style.transform = `translateX(calc(40px + ${-(scrollLeft / navWidth * 30)}%))`;
+                    break;
+                }
+                case 2: {
+                    console.log(scrollLeft / navWidth)
+                    if((scrollLeft / navWidth) < 0.5 || (scrollLeft / navWidth) == 0 ) {
+                        bgPlane.style.borderRadius = `0`
+                    }else {
+                        bgPlane.style.borderRadius = `${menuNavBorderRadius} 0 0 0 `
+                    }
+                    bgPlane.style.transform = `translateX(calc(${-(scrollLeft / navWidth * 100)}%))`;
+                    break;
+                }
+
+            }
         }
     };
-
-    navigation.addEventListener('scroll', updateBgPlanePosition);
 
     CheckMenuBgStyle()
 })

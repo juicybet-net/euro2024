@@ -608,18 +608,6 @@ body {
     width: 20px;
     height: 20px;
   }
-  .menu__nav_plane {
-    display: block;
-    position: absolute;
-    left: 0;
-    top: 0;
-    transform: translateX(40px);
-    width: 100%;
-    height: 100%;
-    background: var(--gradient-purple-bottom);
-    border-radius: 20px 20px 0 0;
-    z-index: 1;
-  }
   .menu__body {
     z-index: 100;
   }
@@ -640,5 +628,16 @@ body {
   }
   .footer__logo {
     margin-bottom: 15px;
+  }
+}
+@media screen and (max-width: 550px) {
+  .menu__nav_plane {
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-purple-bottom);
+    z-index: 1;
   }
 }/*# sourceMappingURL=styles.css.map */
