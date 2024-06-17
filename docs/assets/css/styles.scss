@@ -300,7 +300,8 @@ body {
     }
     &__cards {
         display: grid;
-        grid-template-columns: repeat(4, minmax(320px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+
         opacity: 0;
         transform: scaleY(0);
         height: 0;
@@ -438,15 +439,6 @@ body {
         }
         &__card {
             padding: 35px;
-        }
-    }
-}
-
-@media screen and (max-width: 1510px) {
-
-    .menu {
-        &__cards {
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
         }
     }
 }
