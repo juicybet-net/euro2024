@@ -493,6 +493,14 @@ body {
   height: 3px;
   background: var(--color-purple);
 }
+.menu__card_list-item a {
+  color: var(--color-purple);
+  font-weight: 700;
+}
+.menu__card_list-item a:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
 
 .join__content {
   display: flex;
